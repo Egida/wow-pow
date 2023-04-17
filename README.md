@@ -23,7 +23,8 @@ make docker-run-client
 
 ## Protocol
 ### Message structure 
-#### Header
+```
+Header
 Size: 10 bytes
 | Offset | Name         | Description                        |
 |--------|--------------|------------------------------------|
@@ -31,31 +32,32 @@ Size: 10 bytes
 | 1      | type         | message type                       |
 | 2      | payload size | size of upcoming payload in bytes |
 
-#### Type of message 
+Type of message 
 | Type                         | Number | Description                                                    |
 |------------------------------|--------|----------------------------------------------------------------|
 | ProofOfWorkChallengeRequest  | 0      | Request to solve PoW puzzle (send by the server to the client) |
 | ProofOfWorkChallengeResponce | 1      | Response with PoW solution (send by the client to the server   |
 | Quote                        | 2      | Quote from the book                                            |
 
-#### ProofOfWorkChallengeRequest
+ProofOfWorkChallengeRequest
 Size: depends on token size
 | Offset | Name       | Description                          |
 |--------|------------|--------------------------------------|
 | 0      | difficulty | difficulty of the puzzle (up to 255) |
 | 1      | token      | incoming token for the puzzle       |
 
-#### ProofOfWorkChallengeResponce
+ProofOfWorkChallengeResponce
 Size: 8 bytes
 | Offset | Name  | Description                 |
 |--------|-------|-----------------------------|
 | 0      | nonce | the solution for the puzzle |
 
-#### Quote
+Quote
 Size: depends on quote size
 | Offset | Name  | Description           |
 |--------|-------|-----------------------|
 | 0      | quote | a quote from the book |
+```
 
 ### Interaction 
 #### General 
