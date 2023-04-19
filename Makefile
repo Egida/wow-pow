@@ -15,7 +15,7 @@ docker-images:
 
 
 docker-run-server:
-	docker run wow-pow-server:latest -p 9000:9000 -- \
+	docker run -p 9000:9000  wow-pow-server:latest -- \
 		--proof-token-size=40 \
 		--proof-difficulty=24
 
