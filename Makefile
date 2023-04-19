@@ -23,4 +23,4 @@ docker-run-client:
 	docker run --net host wow-pow-client:latest \
 		--pow-concurrency=8 \
 		--fetch-concurrency=1 \
-		--pause-between-calls=2
+		--pause-between-calls=4
